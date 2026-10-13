@@ -1,0 +1,111 @@
+{
+  "name": "loggerfish",
+  "displayName": "LoggerFish",
+  "description": "新概念英语2 + 雅思词汇 碎片化学习插件 —— 在 Output 面板伪装成程序日志，上班摸鱼学英语",
+  "version": "0.5.1",
+  "publisher": "loggerfish-dev",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Education",
+    "Other"
+  ],
+  "keywords": [
+    "english",
+    "ielts",
+    "vocabulary",
+    "learning",
+    "study",
+    "新概念英语",
+    "雅思",
+    "背单词"
+  ],
+  "icon": "icon.png",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:loggerfish.prev",
+    "onCommand:loggerfish.next",
+    "onCommand:loggerfish.boss",
+    "onCommand:loggerfish.toggleMode",
+    "onCommand:loggerfish.show",
+    "onCommand:loggerfish.clear",
+    "onCommand:loggerfish.reset",
+    "onCommand:loggerfish.jump"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "loggerfish.prev",
+        "title": "LoggerFish：上一个",
+        "category": "LoggerFish"
+      },
+      {
+        "command": "loggerfish.next",
+        "title": "LoggerFish：下一个",
+        "category": "LoggerFish"
+      },
+      {
+        "command": "loggerfish.boss",
+        "title": "LoggerFish：老板键（伪装/恢复）",
+        "category": "LoggerFish"
+      },
+      {
+        "command": "loggerfish.toggleMode",
+        "title": "LoggerFish：切换学习模式（新概念/雅思）",
+        "category": "LoggerFish"
+      },
+      {
+        "command": "loggerfish.show",
+        "title": "LoggerFish：显示日志面板",
+        "category": "LoggerFish"
+      },
+      {
+        "command": "loggerfish.clear",
+        "title": "LoggerFish：清空日志",
+        "category": "LoggerFish"
+      },
+      {
+        "command": "loggerfish.reset",
+        "title": "LoggerFish：重置学习进度",
+        "category": "LoggerFish"
+      },
+      {
+        "command": "loggerfish.jump",
+        "title": "LoggerFish：跳转到指定课",
+        "category": "LoggerFish"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "loggerfish.prev",
+        "key": "alt+shift+[",
+        "mac": "cmd+shift+[",
+        "description": "LoggerFish：上一个"
+      },
+      {
+        "command": "loggerfish.next",
+        "key": "alt+shift+]",
+        "mac": "cmd+shift+]",
+        "description": "LoggerFish：下一个"
+      },
+      {
+        "command": "loggerfish.boss",
+        "key": "alt+shift+\\",
+        "mac": "cmd+shift+\\",
+        "description": "LoggerFish：老板键（伪装/恢复）"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
